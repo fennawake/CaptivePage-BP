@@ -1,53 +1,91 @@
+*{ margin: 0; padding: 0; }
 body,html {
   height: 100%;
 }
 
-body{
-  background-image: url('../img/background_01.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
+html{
+  background: url('../img/background_01.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+     -moz-background-size: cover;
+       -o-background-size: cover;
+          background-size: cover;
 }
 
-.clear{
-  clear: both;
+body {
+  background-color: transparent;
+  overflow-y: hidden;
 }
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  font-style: italic;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  font-style: italic;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  font-style: italic;
+}
+:-moz-placeholder { /* Firefox 18- */
+  font-style: italic;
+}
+
+/* clear div's float */
+.clear{ clear: both; }
+
+.h-20{ margin-top: 20px !important; }
+.h-100{ margin-top: 100px !important; }
+
+.color-white{ color: #fff; }
+
+.no-bold{ font-weight: normal; }
+
+.center-content{ margin: 0 auto; display: table; width: 100%; }
+
 
 .jumbotron{
   padding: 2rem 2rem;
-  background-color: #666;
+  background-color: rgba(102, 102, 102, 0.877);
   border-color: #555 !important;
+  /* margin-top: 200px; */
 }
+  @media (min-width: 576px) {
+    .jumbotron{ margin-top: 0px; }
+  }
+  @media (min-width: 768px) {
+    .jumbotron{ margin-top: 0px; }
+  }
+  @media (min-width: 992px) {
+    .jumbotron{ margin-top: 0px; }
+  }
+  @media (min-width: 1200px) {
+    .jumbotron{ margin-top: 0px; }
+  }
+
 
   .jumbotron hr{
     border-color: #999;
     margin-top: 30px;
   }
+  
   .jumbotron hr.left{
     float: left;
     width: 100%;
+    margin-left: 15px;
   }
   .jumbotron hr.right{
     float: right;
     width: 100%;
+    margin-right: 15px;
   }
 
-  .jumbotron h3{
-    color: rgb(165, 192, 223);
-  }
 
-  .jumbotron .top15{
-    margin-top: 15px;
-  }
-  .jumbotron .top30{
-    margin-top: 30px;
-  }
+  .jumbotron .top15{ margin-top: 15px; }
+  .jumbotron .top30{ margin-top: 30px; }
   
-  .jumbotron .no-padding{
-    padding: 0;
-  }
+  .jumbotron .no-padding{ padding: 0; }
 
   .jumbotron p.connect{
-    color: #bbb;
+    color: #fff;
     text-align: center;
     margin-bottom: 0;
     font-size: 13px;
@@ -55,16 +93,16 @@ body{
   }
   
   .jumbotron p.alternative-login{
-    color: #bbb;
+    color: #fff;
     text-align: center;
     margin-top: 20px;
     margin-bottom: 20px;
-    font-size: 12px;
+    font-size: 13px;
     line-height: 18px;
   }
-
+  
   .jumbotron form .form-group label{
-    color: #bbb;
+    color: #fff;
     font-size: 13px;
     margin-bottom: 0;
   }
@@ -88,4 +126,14 @@ body{
     color: #bbb;
   }
 
-
+span#status{
+  font-size: 13px;
+  background-color: rgb(230, 103, 87);
+  width: 100%;
+  display: table;
+  padding: 0 10px;
+  margin-bottom: 15px;
+  display: none;
+  text-align: center;
+  color: #fff;
+}
