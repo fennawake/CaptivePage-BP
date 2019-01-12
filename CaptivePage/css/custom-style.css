@@ -1,0 +1,54 @@
+body,html {
+  height: 100%;
+}
+
+body{
+  background-image: url('../img/background_01.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.clear{
+  clear: both;
+}
+
+.jumbotron{
+  padding: 2rem 2rem;
+  background-color: #666;
+  border-color: #555 !important;
+}
+
+  .jumbotron hr{
+    border-color: #fff;
+  }
+
+  .jumbotron h3{
+    color: rgb(165, 192, 223);
+  }
+
+  .jumbotron form .form-group label{
+    color: #bbb;
+    font-size: 13px;
+    margin-bottom: 0;
+  }
+
+  .jumbotron form .form-group input{
+    font-size: 12px;
+  }
+
+  .jumbotron form .form-check-input{
+    margin-top: .2rem;
+  }
+
+  .jumbotron form .form-check{
+    color: #bbb;
+    font-size: 12px;
+    line-height: 17px;
+  }
+
+  .jumbotron form .form-check a{
+    text-decoration: underline;
+    color: #bbb;
+  }
+
+
