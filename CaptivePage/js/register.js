@@ -11,7 +11,7 @@ const verifyEmptyEmail = function() {
   const email = document.getElementById('email');
   if (email.value == ''){
     const status = document.getElementById('status');
-          status.innerHTML = "Enter your email";
+          status.innerHTML = "Please enter your email";
           status.style.display = "table";
   }else{
     if (IsEmail){
