@@ -19,11 +19,48 @@ body{
 }
 
   .jumbotron hr{
-    border-color: #fff;
+    border-color: #999;
+    margin-top: 30px;
+  }
+  .jumbotron hr.left{
+    float: left;
+    width: 100%;
+  }
+  .jumbotron hr.right{
+    float: right;
+    width: 100%;
   }
 
   .jumbotron h3{
     color: rgb(165, 192, 223);
+  }
+
+  .jumbotron .top15{
+    margin-top: 15px;
+  }
+  .jumbotron .top30{
+    margin-top: 30px;
+  }
+  
+  .jumbotron .no-padding{
+    padding: 0;
+  }
+
+  .jumbotron p.connect{
+    color: #bbb;
+    text-align: center;
+    margin-bottom: 0;
+    font-size: 13px;
+    line-height: 18px;
+  }
+  
+  .jumbotron p.alternative-login{
+    color: #bbb;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 12px;
+    line-height: 18px;
   }
 
   .jumbotron form .form-group label{
