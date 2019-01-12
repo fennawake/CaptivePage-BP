@@ -126,7 +126,8 @@ body {
     color: #bbb;
   }
 
-span#status{
+span#statusName,
+span#statusEmail{
   font-size: 13px;
   background-color: rgb(230, 103, 87);
   width: 100%;
