@@ -22,7 +22,7 @@ const validate = function() {
           statusEmail.innerHTML = "Please enter your email";
           statusEmail.style.display = "table";
   }else{
-    window.location.href = "register.html";
+    window.location.href = "#";
   }
  
 }

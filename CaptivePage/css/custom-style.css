@@ -16,17 +16,21 @@ body {
   overflow-y: hidden;
 }
 
-::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   font-style: italic;
+  color: #fff !important;
 }
-::-moz-placeholder { /* Firefox 19+ */
+input::-moz-placeholder { /* Firefox 19+ */
   font-style: italic;
+  color: #fff !important;
 }
-:-ms-input-placeholder { /* IE 10+ */
+input:-ms-input-placeholder { /* IE 10+ */
   font-style: italic;
+  color: #fff !important;
 }
-:-moz-placeholder { /* Firefox 18- */
+input:-moz-placeholder { /* Firefox 18- */
   font-style: italic;
+  color: #fff !important;
 }
 
 /* clear div's float */
@@ -46,20 +50,8 @@ body {
   padding: 2rem 2rem;
   background-color: rgba(102, 102, 102, 0.877);
   border-color: #555 !important;
-  /* margin-top: 200px; */
+  margin-top: 0px;
 }
-  @media (min-width: 576px) {
-    .jumbotron{ margin-top: 0px; }
-  }
-  @media (min-width: 768px) {
-    .jumbotron{ margin-top: 0px; }
-  }
-  @media (min-width: 992px) {
-    .jumbotron{ margin-top: 0px; }
-  }
-  @media (min-width: 1200px) {
-    .jumbotron{ margin-top: 0px; }
-  }
 
 
   .jumbotron hr{
@@ -107,9 +99,58 @@ body {
     margin-bottom: 0;
   }
 
-  .jumbotron form .form-group input{
+  .jumbotron form .form-group input.form-control,
+  .jumbotron form .form-group select.form-control{
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 2px 8px 4px 8px;
     font-size: 12px;
+    line-height: 20px;
+    color: #fff;
+    background-color: transparent;
+    border: 1px solid #ced4da;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-radius: 0;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;  
   }
+
+  .jumbotron form .form-group input.date{
+    padding: 2px 8px 4px 8px;
+    display: table;
+    width: 100%;
+    height: 30px;
+  }
+
+  input[type=date] { text-align: left; }
+  input[type="date"]:before { content: attr(placeholder) !important; margin-right: 0; }
+  input[type="date"]:before { content: attr(placeholder) !important; margin-right: 0; }
+  input[type="date"]:focus:before { content: '' !important; }
+
+  .fb-login-button{
+    width: 100%;
+    display: table;
+  }
+
+  iframe._5h0d ._5h0o{
+    font-size: 13px !important;
+  }
+
+  .jumbotron form .form-group select.form-control{
+    height: 30px;
+    line-height: 30px;
+    padding: 2px 8px 4px 8px;
+  }
+  
+  
+
+.input-group{ flex-wrap: nowrap; }
+.gj-datepicker-bootstrap [role=right-icon] button{
+  border-top: 0 !important;
+  border-right: 0 !important;
+}
 
   .jumbotron form .form-check-input{
     margin-top: .2rem;
