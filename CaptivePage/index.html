@@ -4,25 +4,19 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-		<link rel="stylesheet" href="./css/custom-style.css">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/custom-style.css">
 
-		<title>Captive Portal - Guest Wifi</title>
+		<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="theme-color" content="#ffffff">
+
+		<title>Burleigh Pavilion - Guest Wifi</title>
 	</head>
 	
 	<body>
-		<div id="fb-root"></div>
-		<script>
-			(function(d, s, id) {
-				var js, 
-						fjs = d.getElementsByTagName(s)[0];
-				if (d.getElementById(id)) return;
-					js = d.createElement(s); js.id = id;
-					js.src = 'https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v3.2&appId=503820390025659&autoLogAppEvents=1';
-					fjs.parentNode.insertBefore(js, fjs);
-				}(document, 'script', 'facebook-jssdk'));
-		</script>
-		
 		<div class="container">			
 			<div class="row">
 				<div class="col-12 col-sm-12 col-md-12 col-lg-4 center-content h-20">
@@ -39,10 +33,21 @@
 									</div>
 								</div>
 
+								<div class="row" id="access-continue">
+									<div class="col-12 h-20 border">
+										<h5 class="text-center h-10 color-white no-bold">Accept the terms to continue</h5>
+									</div>
+								</div>
+
+								<div class="row" id="status">
+									<div class="col-12 h-20 border">
+										<h5 id="txt-status" class="text-center h-10 color-white no-bold"></h5>
+									</div>
+								</div>
+
 								<div class="row">
 									<div class="col-12 h-10">
-										<p class="connect">Login with</p>
-										<div class="fb-login-button" data-width="100%" data-max-rows="1" data-size="medium" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>	
+										<button id="btn-face" class="btn btn-primary btn-block shadow btn-face" disabled>Login with</button>
 									</div>
 								</div>
 				
@@ -58,37 +63,39 @@
 				
 								<div class="row">
 									<div class="col-12">
-										<form action="#" id="form-email">
+										<form action="php/register.php" id="form-email" method="POST">
 											<div class="form-group">
-												<input type="text" class="form-control shadow" id="name" aria-describedby="name" placeholder="Name" required>
+												<input type="text" class="form-control shadow" id="name" name="name" aria-describedby="name" placeholder="Name" required>
 											</div>
-											<span id="statusName"></span>
 											
 
 											<div class="form-group">
-												<input type="email" class="form-control shadow" id="email" aria-describedby="email" placeholder="E-mail" required>
+												<input type="email" class="form-control shadow" id="email" name="email" aria-describedby="email" placeholder="E-mail" required>
 											</div>
-											<span id="statusEmail"></span>
+
+											<div class="form-group">
+												<input type="text" name="birth" class="form-control date simple-field-data-mask" placeholder="Date of Birth" data-mask="00/00/0000" required>
+											</div>
 											
-											<div class="form-group">
-												<select class="form-control" id="gender" required>
-													<option>Gender</option>
-													<option>Female</option>
-													<option>Male</option>
-												</select>
+											<div class="form-check-inline left">Gender</div>
+											<div class="form-check-inline">
+												<label class="form-check-label">
+													<input type="radio" name="gender" class="form-check-input" value="female" required>Female
+												</label>
+											</div>
+											<div class="form-check-inline">
+												<label class="form-check-label">
+													<input type="radio" name="gender" class="form-check-input" value="male" required>Male
+												</label>
 											</div>
 
-											<div class="form-group">
-												<input type="text" class="form-control date simple-field-data-mask" placeholder="Date of Birth" data-mask="00/00/0000" required>
-											</div>
-
-											<div class="form-group form-check">
+											<div class="form-group form-check h-20">
 												<div class="custom-control custom-checkbox">
 													<input type="checkbox" class="custom-control-input" id="terms-and-conditions">
-													<label class="form-check-label custom-control-label" for="terms-and-conditions">I agree with Burleigh Pavilion's <a href="">Terms and Conditions</a> and <a href="">Privacy Policy</a></label>
+													<label class="form-check-label custom-control-label" for="terms-and-conditions">I agree with Burleigh Pavilion's <a href="terms-conditions.html">Terms and Conditions</a> and <a href="privacy-policy.html">Privacy Policy</a></label>
 												</div>
 											</div>
-											<button type="submit" id="submit" class="btn btn-primary btn-block shadow">Submit</button>
+											<button type="submit" id="submit" class="btn btn-primary btn-block shadow re-style" disabled>Submit</button>
 										</form>
 									</div>
 								</div>
@@ -98,11 +105,11 @@
 			</div>
 		</div>
 	
-	<script src="js/register.js"></script>
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/jquery.mask.js"></script>
+	<script type="text/javascript" src="js/release_access.js"></script>
+
 	</body>
 </html>

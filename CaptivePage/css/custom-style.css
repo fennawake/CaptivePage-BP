@@ -1,4 +1,4 @@
-*{ margin: 0; padding: 0; }
+*{ margin: 0; padding: 0; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;}
 body,html {
   height: 100%;
 }
@@ -13,7 +13,7 @@ html{
 
 body {
   background-color: transparent;
-  overflow-y: hidden;
+  overflow-y: auto;
 }
 
 input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
@@ -36,7 +36,12 @@ input:-moz-placeholder { /* Firefox 18- */
 /* clear div's float */
 .clear{ clear: both; }
 
+.center{text-align: center;}
+.right{text-align: right}
+
+.h-10{ margin-top: 10px !important; }
 .h-20{ margin-top: 20px !important; }
+.h-40{ margin-top: 40px !important; }
 .h-100{ margin-top: 100px !important; }
 
 .color-white{ color: #fff; }
@@ -129,19 +134,116 @@ input:-moz-placeholder { /* Firefox 18- */
   input[type="date"]:before { content: attr(placeholder) !important; margin-right: 0; }
   input[type="date"]:focus:before { content: '' !important; }
 
-  .fb-login-button{
-    width: 100%;
-    display: table;
-  }
-
   iframe._5h0d ._5h0o{
     font-size: 13px !important;
+  }
+
+  input[type="radio"]:checked,
+  input[type="radio"]:not(:checked){
+    color: #fff;
+  }
+
+  [type="radio"]:checked + label,
+  [type="radio"]:not(:checked) + label
+  {
+      position: relative;
+      padding-left: 28px;
+      cursor: pointer;
+      line-height: 20px;
+      display: inline-block;
+      color: #fff;
+  }
+
+  .form-check-inline{
+    margin-left: 10%;
+    margin-right: 0;
+  }
+  .form-check-inline.left{
+    margin-left: 7px;
+    font-size: 12px;
+    color: #fff;
+    font-style: italic;
+  }
+
+  .btn-face,
+  .re-style{
+    text-align: center;
+    background-color: #4267B2;
+    border-color: #4267B2;
+    padding: 5px;
+    border-radius: 0;
+    background-image: url(../img/facebook-icon.png);
+    background-size: 32px;
+    background-position-x: 10px;
+    background-repeat: no-repeat;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .re-style{
+    background-image: none;
+  }
+  
+  .btn-face:hover,
+  .re-style:hover{
+    text-align: center;
+    background-color: #4267B2;
+    border-color: #4267B2;
+    padding: 5px;
+    border-radius: 0;
+    background-image: url(../img/facebook-icon.png);
+    background-size: 32px;
+    background-position-x: 10px;
+    background-repeat: no-repeat;
+  }
+
+  .re-style:hover{
+    background-image: none;
+  }
+
+  .btn-face:disabled,
+  .re-style:disabled{
+    background-color: #4267B2;
+    border-color: #4267B2;
+    opacity: 0.3;
+  }
+
+  .btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show>.btn-primary.dropdown-toggle:focus{
+    background-color: #4267B2;
+    border-color: #4267B2;
+  }
+
+  .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle{
+    background-color: #4267B2;
+    border-color: #4267B2;
+  }
+
+
+  
+
+  .jumbotron form .form-check-input{
+    margin-top: 0;
+    color: #fff;
+  }
+  .jumbotron form label.form-check-label{
+      color: #fff;
+      font-weight: normal;
+      font-size: 12px;
+  }
+  
+
+  select{
+    background-color: transparent !important;
   }
 
   .jumbotron form .form-group select.form-control{
     height: 30px;
     line-height: 30px;
     padding: 2px 8px 4px 8px;
+    background: transparent;
+  }
+  .jumbotron form .form-group select.form-control option{
+    background: transparent;
   }
   
   
@@ -167,15 +269,89 @@ input:-moz-placeholder { /* Firefox 18- */
     color: #bbb;
   }
 
-span#statusName,
-span#statusEmail{
-  font-size: 13px;
-  background-color: rgb(230, 103, 87);
-  width: 100%;
-  display: table;
-  padding: 0 10px;
-  margin-bottom: 15px;
-  display: none;
+.text{
+  color: #fff;
+  font-size: 12px;
+  text-align: justify;
+}
+
+p.bold{
+  font-weight: bold;
+}
+
+a.text{
+  font-weight: bold;
+  color: #fff;
+}
+
+a.link-terms{
+  font-weight: normal;
+  color: #fff;
+  font-size: 11px;
+  padding: 10px;
+}
+
+.center-links{
   text-align: center;
   color: #fff;
+}
+
+a.export,
+a.back,
+a.logout{
+  color: #333;
+  font-size: 12px;
+}
+
+a.back{
+  background-image: url(../img/arrowback.png);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  padding: 4px 5px 4px 25px;
+}
+
+a.export{
+  background-image: url(../img/csv.png);
+  background-repeat: no-repeat;
+  background-position: 6px 3px;
+  padding: 4px 5px 4px 25px;
+}
+
+a.logout{
+  font-size: 11px;
+  padding-left: 10px;
+}
+
+table thead{
+  background-color: #c7dfef;
+}
+
+.table thead th{
+  font-size: 12px;
+}
+.table tbody th.paginacao a{
+  font-size: 13px; 
+  padding: 5px;
+}
+
+.table tbody th.paginacao a.active{
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.table-striped tbody tr{
+  background-color: #fff;
+}
+
+.table-striped tbody tr:nth-of-type(odd){
+  background-color: #eee;
+}
+
+.table-striped tbody tr th{
+  font-weight: normal;
+  font-size: 12px;
+  color: #333;
+}
+.table-striped tbody tr th a{
+  color: #333;
 }
